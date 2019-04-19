@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Tsimulating Tsunamis</title>
+</head>
+
+<body>
+
+
+    <div id="title">
+        <h1>Tsunami Forecasting and Risk Analasis</h1>
+    </div>
+    <div id='tool'>
+        <h1>Interactive Simulation Tool</h1>
+        <p>
+            <form class="" action="../cgi-bin/view.py" method="GET">
+
+                latitude window start and end:
+                <input type="number" name="latstart" value="" />&#176; to
+                <input type="number" name="latend" value="" />&#176;
+                <br>
+
+                longitude window start and end:
+                <input type="number" name="lonstart" value="" />&#176; to
+                <input type="number" name="lonend" value="" />&#176;
+                <br>
+
+
+                 tsunami initial location (lat,lon): (
+                <input type="number" name="tsulat" value="" />&#176;,
+                <input type="number" name="tsulon" value="" />&#176;)
+                <br>
+
+                <input onclick="showadvanced()" type="checkbox" value="0"/>show advanced options<br>
+                <div id="advancedops" style="display: none;">
+                  tsunami type:
+                  <select class="" name="tsutype">
+                    <option selected="selected" value="uplift">uplift</option>
+                    <option value="seismic">seismic</option>
+                  </select>
+                  <br>
+                  tsunami width X:
+                  <input type="number" name="tsuwx" value="5000" /> meters
+                  <br> tsunami width Y:
+                  <input type="number" name="tsuwy" value="5000" /> meters
+                  <br>
+                  tsunami amplitude
+                  <input type="number" name="tsuamp" value="20" /> meters
+                  <br>
+                  tsunami angle:
+                  <input type="number" name="theta" id="angle" value="180" min="0" max="360"/>&#176;
+                  <br>
+                  duration of simulation
+                  <input type="number" name="simtime" value="2500" min="0" max="10000"/> seconds
+                  <br>
+                </div>
+                <input type="submit" value="submit"/>
+                <script>
+                  function showadvanced() {
+                    var x = document.getElementById("advancedops");
+                    if (x.style.display === "none") {
+                      x.style.display = "block";
+                    } else {
+                      x.style.display = "none";
+                    }
+                  }
+                </script>
+            </form>
+        </p>
+    </div>
+    <div class="g">
+        <h1>Introduction</h1>
+        <p>Tsunamis cause major devastation, kill thousands, destroy cities across wide regions and act far from the source. limiting warnings.
+Indonesia experienced two major Tsunamis in just one year
+Question
+Can the damage of a tsunami be forecasted?
+Can an accurate, real-time tsunami forecasting system, affordable in developing countries, provide early warning and thus save lives?
+I created a real-time physics-based tsunami hazard forecasting system and validated it on case studies.
+My code replaces a supercomputer with a graphics card, making it affordable to agencies in developing countries.</p>
+    </div>
+    <div class="g">
+        <h1>The Shallow Water Equations</h1>
+<p>
+Non-linear differential equations describing surface waves
+h - bathymetry (depth)
+η - surface height deviation
+u - X speed (East)
+v - Y speed (North)
+f - Coriolis force ∝ sin(latitude)
+κ  - viscous damping
+μ - friction coefficient
+
+</p>
+    </div>
+    <div class="p">
+        <h1>The 2018 Palu Tsunami</h1>
+<p>More than 800 people were killed.
+Over 500 were severely injured.
+48,000 were made homeless
+The inundation was greater than expected for the 7.5 magnitude of the earthquake. Why?
+Despite the frequent earthquakes, Palu hadn’t previously experienced such devastation
+</p><p>The highest waves crested
+near the mouth of the bay, and suddenly rose again at Palu City
+</p>
+    </div>
+    <div class="p">
+        <h1>approach</h1>
+<p>ndependent variable: Initiate tsunamis in various places around Palu
+Arc around mouth of Palu bay, constant distance.
+Dependent variable: Resulting maximum water heights in Palu bay</p>
+    </div>
+
+    <div class="p">
+        <h1>design</h1>
+        <p></p>
+    </div>
+    <div class="p">
+        <h1>palu results</h1>
+        <p>Does the harbor’s shape influence damage at Palu city?
+          YES:  Wave amplitude preserved by bay shape, and grows in amplitude as it enters the shallows near the city
+          Does the damage at Palu city depend on the initial location of the tsunami?
+          YES: Maximum wave height grows at tip  ot Palu Bay and City is protected when Tsunami initial locations not directly aligned with bay axis
+          Does the initial wave shape have an effect?
+          NO: Results insensitive to all waves tested ( Seismic, Round, eliptical, and varied oreintations of elipse).  Insensitive to initial amplitide.
+</p>
+    </div>
+    <div class="p">
+        <h1>analasys</h1>
+        <p>Correctly predicted even larger maximum wave heights near the mouth of the bay, where the highest waves really were.
+Tsunamis are more severe in Palu when north of the angle of Palu bay.
+But tsunamis can be guided to Palu by the coast.
+Type of tsunami had small effect
+Bathymetry amplifies impact: channels and slopes
+</p>
+    </div>
+    <div class="k">
+        <h1>The 2018 Krakatoa Tsunami</h1>
+<p>Killed over 500 people.
+Over 1400 severely injured.
+Krakatau volcano’s previous 1883 explosion killed over 30,000 people
+waves reached beyond India.Coincidentally this project was in the midst of simulating this event when the tragedy happened, changing the scope from prediction to forecast validation.
+Landslide From Caldera triggers Tsunami
+
+</p>
+    </div>
+    <div class="k">
+        <h1>krakatoa results</h1>
+<p>I accurately  forecasted both safe zones and highly damaged regions.
+Red Shading along coast shows
+predicted Wave Height
+My Forecast: Dark Red is Dangerous
+No tuning or model fitting used in this forecast.
+</p>
+    </div>
+    <div class="g">
+        <h1>conclusion</h1>
+
+    </div>
+    <div class="g">
+        <h1>high performance computing implementation</h1>
+        I wrote over 1,341 lines of code, including simulation, unit tests, and graphics
+        My Own Implementation: Differential equations, time step integrator written from scratch.
+        Two versions of code that run on personal computer with a graphics card
+        Massively parallel code allows tens of thousands of threads on thousands of GPU cores.
+        28 times faster than real time over regions greater than 20,000 sq. kilometers
+        Parallel and SIMD vector operations on multi-core CPU
+        User Interface: Merges Code and Output Graphics into a single iPython lab notebook output.
+
+    </div>
+    <div class="g">
+        <h1>verification</h1>
+<p>Verified implementation matches physics of known test cases
+  ock in a Pond Unit Test
+  Time Series of a wave expanding matches expected physics,
+  Absorbing boundary conditions on 3 walls and reflective boundary condition on one wall .
+  Verified model reproduces dependence of wave speed with depth In deep water:  c = ~√g*h
+  As the initial spike of water collapses a wave propagates out like a rock in a pond
+  Center of collapsing wave overshoots creating a dip
+  Absorbing boundary mimics wave exiting a finite simulation region
+  Reflective Boundary condition mimics coast
+
+</p>
+    </div>
+    <div class="g">
+        <h1>code</h1>
+<iframe src="code.html" width="" height=""></iframe>
+    </div>
+    <div class="g">
+        <h1>works cited</h1>
+<p>
+  Title bar image: The Great Wave off Kanagawa. Katsushika Hokusai - Metropolitan Museum of Art, online database: entry 45434 Public domain
+  <br><br>
+  Center, National Geophysical Data. Tsunami Events Full Search, Sort by Date, Country. https://www.ngdc.noaa.gov/nndc/struts/results?bt_0=&st_0=&type_8=EXACT&query_8=None+Selected&op_14=eq&v_14=&st_1=&bt_2=&st_2=&bt_1=&bt_10=&st_10=&ge_9=&le_9=&bt_3=&st_3=&type_19=EXACT&query_19=74&op_17=eq&v_17=&bt_20=&st_20=&bt_13=&st_13=&bt_16=&st_16=&bt_6=&st_6=&ge_21=&le_21=&bt_11=&st_11=&ge_22=&le_22=&d=7&t=101650&s=70. Accessed 16 Dec. 2018.
+  <br><br>
+  Coastal National Elevation Database (CoNED) Project - Topobathymetric Digital Elevation Model (TBDEM) | The Long Term Archive. https://lta.cr.usgs.gov/coned_tbdem. Accessed 6 Dec. 2018.
+  <br><br>
+  Indonesia Tsunami Worsened by Shape of Palu Bay: Scientists. https://www.yahoo.com/news/indonesia-tsunami-worsened-shape-palu-bay-scientists-025002225.html. Accessed 16 Jan. 2019.
+  <br><br>
+  Kelvin Waves. www.oc.nps.edu/webmodules/ENSO/kelvin.html.
+  <br><br>
+  Kristina, W. Effective Coastal Boundary Conditions for Tsunami Simulations. 2014. ---. Effective Coastal Boundary Conditions for Tsunami Simulations. 2014.
+  <br><br>
+  Randall, David A. “The Shallow Water Equations.” Selected Papers, p. 11. Shallow.Pdf. http://kestrel.nmt.edu/~raymond/classes/ph589/notes/shallow/shallow.pdf . Accessed 6 Dec. 2018. aSynolakis, C. E., et al. “Validation and Verification of Tsunami Numerical Models.” Pure and Applied Geophysics, vol. 165, no. 11–12, Dec. 2008, pp. 2197–228. Crossref, doi:10.1007/s00024-004-0427-y. ---. “Validation and Verification of Tsunami Numerical Models.” Tsunami Science Four Years after the 2004 Indian Ocean Tsunami: Part I: Modelling and Hazard Assessment, edited by Phil R. Cummins et al., Birkhäuser Basel, 2009, pp. 2197–228. Springer Link, doi:10.1007/978-3-0346-0057-6_11.
+  <br><br>
+  Thacker, William Carlisle. “Some Exact Solutions to the Nonlinear Shallow-Water Wave Equations.” Journal of Fluid Mechanics, vol. 107, June 1981, pp. 499–508. Cambridge Core, doi:10.1017/S0022112081001882.  
+  <br><br>
+  Zaibo, N,  Pelinovsky, E,  Kurkin A), and Kozelkov, A ESTIMATION OF FAR-FIELD TSUNAMI POTENTIAL FOR THE CARIBBEAN COASTBASED ON NUMERICAL SIMULATION, Science of Tsunami Hazards, Volume 21, Number 4, page 202 (2003)
+  <br><br>
+  Time-Stepping Schemes Review - WikiROMS. https://www.myroms.org/wiki/Time-stepping_Schemes_Review#Forward-Backward_Feedback_.28RK2-FB.29. Accessed 6 Dec. 2018.
+  <br>
+  <br>
+  Tinti, S., and R. Tonini. The UBO-TSUFD Tsunami Inundation Model: Validation and Application to a Tsunami Case Study Focused on the City of Catania, Italy. 2013.
+  <br>
+  <br>
+  Giachetti,  T. Paris, R. Kelfoun K and Ontowirjo B.   Tsunami hazard related to a flank collapse of Anak Krakatau Volcano, Sunda Strait, Indonesia, Geological Society, London, Special Publications, 361, 79-90, 3 January 2012,
+  <br>
+  <br>
+  Smith, Nicola. “Indonesia Tsunami: At Least 222 Dead and 843 Injured after Anak Krakatau Volcano Erupts .” The Telegraph, Telegraph Media Group, 22 Dec. 2018, www.telegraph.co.uk/news/2018/12/22/indonesia-tsunami-least-20-dead-165-injured-waves-hit-beaches/.
+
+</p>
+    </div>
+</body>
+
+</html>

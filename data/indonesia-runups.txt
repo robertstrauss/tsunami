@@ -1,0 +1,7 @@
+INDONESIA 	OFF W. COAST OF SUMATRA; 	3.316, 95.854; 	50.90;
+runups:
+ACEH, SUMATRA;               	5.25100, 95.25300; 	225; 									16.70; 		5;
+WEST COAST OF ACEH, SUMATRA; 	5.45200, 95.24200; 	247; 									30.40; 		4;
+SIGLI, ACEH, SUMATRA; 	        5.38900, 95.96000; 	231; 									4.40; 		4;
+SIMEULUE ISLAND; 	            2.57500, 96.26900; 	94; 									.30; 	10.00; 	4;
+SKONEDA, MEULABOH, SUMATRA; 	4.20800, 96.04000; 	101; 									15.00; 	5000.00; 	4;

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <p>
+        <form class="" action="shallowwater.py" method="GET">
+
+            latitude window start and end:
+            <input type="number" name="latstart" value="" /> degrees, to
+            <input type="number" name="latend" value="" /> degrees
+            <br>
+
+            longitude window start and end:
+            <input type="number" name="lonstart" value="" /> degrees, to
+            <input type="number" name="lonend" value="" /> degrees
+            <br>
+
+
+             tsunami initial location (lat,lon): (
+            <input type="number" name="tsulat" value="" /> degrees,
+            <input type="number" name="tsulon" value="" /> degrees)
+            <
+            br>
+
+            tsunami type:
+            <select class="" name="tsutype">
+                <option selected="selected" value="uplift">uplift</option>
+                <option value="seismic">seismic</option>
+            </select>
+            <br>
+
+
+             tsunami width X:
+            <input type="number" name="tsuwx" value="" /> meters
+            <br> tsunami width Y:
+            <input type="number" name="tsuwy" value="" /> meters
+            <br>
+
+
+            tsunami amplitude
+           <input type="number" name="tsuamp" value="" /> meters
+           <br>
+             tsunami angle:
+            <input type="range" name="theta" id="range_angle" value="180" min="0" max="360" oninput="range_angle_disp.value = range_angle.value">
+            <output id="range_angle_disp"></output>
+
+        </form>
+    </p>
+</body>
+
+</html>

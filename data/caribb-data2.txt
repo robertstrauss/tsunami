@@ -1,0 +1,27 @@
+01.09.1530,10.7,-64.1,7,2,7.3,Peninsula de Paria, Cuba 
+01.09.1543,10.6,-64.1,7,2, ,Cumana, Venezuela 
+01.03.1688,17.6,-76.7, ,2, ,Port Royal, Jamaica 
+16.04.1690,17.5,-61.5,8,2, ,Charlotte Amalie, US Virgin Is.  
+07.06.1692,17.8,-76.7,7,3,10,Port Royal, Liganee, Jamaica 
+18.10.1751,18.5,-70.7,7,2, ,Azua de Compostela, Haiti 
+21.11.1751,18.5,-73.5,7,2,7,St Martin, Antigua, Martinique 
+11.06.1766,20,-75.5,7,2, ,Jamaica 
+03.10.1780,18.1,-78.1,7,2,3.2,Savanna la Mar, Jamaica 
+28.03.1787,19,-66,8,2,5,4,S. Mexico 
+05.05.1802,10,-60, ,2, ,Rio Orinoko, Cumana, Venezuela 
+26.03.1812,10.3,-64.1, ,2, ,La Guaira, Venezuela 
+11.11.1812,18,-76.5, ,2, ,Annotto Bay, Jamaica  
+30.11.1823,14.2,-61.1, ,2, ,St Pierre, Martinique 
+30.11.1824,14.5,-61, ,2, ,St Pierre, Martinique 
+07.05.1842,18.5,-72.5,7.7,3,8,3,Hispaniola, Haiti 
+17.07.1852,19.5,-75.5, ,2, ,Santiago de Cuba, Cuba 
+09.08.1856,15.8,-84.3, ,2,5,Rio Patuca, Honduras 
+18.11.1867,18.4,-64.3,7.5,3,10,St Thomas, Virgin Is. 
+29.10.1900,10.3,-65.9, ,3,10,Puerto Tay, Venezuela 
+14.01.1907,18.2,-76.7,7,2,9.1,Annotto Bay, Jamaica 
+11.10.1918,18.5,-67.5,7.5,2,5,6,Aguadilla, Puerto Rico 
+04.08.1946,19.25,-69,8,2,4.7,Hispaniola, Dominican Republic 
+02.12.1951,13.5,-60, ,2, ,Puerto Rico and Barbados 
+17.08.1952,18.4,-68.4, ,2, ,Puerto Rico, Dominican Rep, 
+18.01.1955,11.3,-69.4,5.5,2, ,La Vela, Venezuela 
+03.09.1979,11.5,-69.3, ,2, ,Puerto Cumaredo, Venezuela  

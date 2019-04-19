@@ -1,0 +1,28 @@
+body{
+     background-color:#F0F0F0;
+}
+ h1{
+    font-size:37px;
+    font-family:'Advent Pro';
+}
+ p{
+    font-family:'Advent Pro';
+    font-size:25px;
+}
+ .g,.p,.k,#title,#tool{
+     border-radius:10px;
+     background-color:#E8E8E8;
+     font-family:'Advent Pro';
+     margin-top:10px;
+     margin-bottom:10px;
+     width:100%;
+
+     text-align:left;
+     padding:5px 20px;
+}
+
+/*
+.g{border: solid #0000FF88;}
+.p{border: solid #FF000088;}
+.k{border: solid #00FF0088;}
+*/
